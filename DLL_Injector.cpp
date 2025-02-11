@@ -1,5 +1,5 @@
 // DLL_Injector.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// THIS THIS BUILT FOR A 32 BIT APP
 
 #include <iostream>
 #include "proc.h"
@@ -8,8 +8,8 @@
 
 int main()
 {
-    const char* dllPath = "C:\\Users\\astalios\\Documents\\Visual Studio 2019\\Projects\\assaultCube_internalTrainer\\Debug\\internalHack.dll";
-    const char* procName = "ac_client.exe";
+    const char* dllPath = "PATH\\TO\\DLL";
+    const char* procName = "\\executable";
     DWORD procId = 0;
 
     while (!procId)
@@ -28,6 +28,8 @@ int main()
 
         HANDLE hThread = CreateRemoteThread(hProc, nullptr, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, loc, 0, nullptr);
 
+        std::cout << "Injection Reussie !" << std::endl;
+
         if (hThread)
         {
             CloseHandle(hThread);
@@ -38,5 +40,6 @@ int main()
     {
         CloseHandle(hProc);
     }
+    getchar();
     return 0;
 }
