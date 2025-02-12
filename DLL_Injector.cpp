@@ -8,10 +8,10 @@
 
 int main()
 {
-    const char* dllPath = "PATH\\TO\\DLL";
-    const char* procName = "\\executable";
+    const char* dllPath = "C:\\Users\\astalios\\Documents\\Visual Studio 2019\\Projects\\assaultCube_internalTrainer\\Debug\\internalHack.dll";
+    const char* procName = "ac_client.exe";
     DWORD procId = 0;
-
+    
     while (!procId)
     {
         procId = GetProcId(procName);
